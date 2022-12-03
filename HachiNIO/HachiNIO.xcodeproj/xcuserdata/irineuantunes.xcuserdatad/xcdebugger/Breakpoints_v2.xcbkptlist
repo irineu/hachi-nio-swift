@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "8325D18C-83E9-4D41-81DA-1EF003CD18DD"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8DE929C9-D044-4E23-B716-D3BFA77DC86F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../swift-nio-ssl/Sources/NIOSSL/NIOSSLClientHandler.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "init(context:serverHostname:verificationCallback:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8DE929C9-D044-4E23-B716-D3BFA77DC86F - 2e3980a49d75a847"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NIOSSL.NIOSSLClientHandler.init(context: NIOSSL.NIOSSLContext, serverHostname: Swift.Optional&lt;Swift.String&gt;, verificationCallback: Swift.Optional&lt;(NIOSSL.NIOSSLVerificationResult, NIOSSL.NIOSSLCertificate) -&gt; NIOSSL.NIOSSLVerificationResult&gt;) throws -&gt; NIOSSL.NIOSSLClientHandler"
+                  moduleName = "HachiNIO"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/irineuantunes/Desktop/hachi-nio/hachi-nio-swift/swift-nio-ssl/Sources/NIOSSL/NIOSSLClientHandler.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "1232">
+               </Location>
+               <Location
+                  uuid = "8DE929C9-D044-4E23-B716-D3BFA77DC86F - 2e3980a49d75a847"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NIOSSL.NIOSSLClientHandler.init(context: NIOSSL.NIOSSLContext, serverHostname: Swift.Optional&lt;Swift.String&gt;, verificationCallback: Swift.Optional&lt;(NIOSSL.NIOSSLVerificationResult, NIOSSL.NIOSSLCertificate) -&gt; NIOSSL.NIOSSLVerificationResult&gt;) throws -&gt; NIOSSL.NIOSSLClientHandler"
+                  moduleName = "HachiNIO"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/irineuantunes/Desktop/hachi-nio/hachi-nio-swift/swift-nio-ssl/Sources/NIOSSL/NIOSSLClientHandler.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "512">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "861BB768-4675-44CC-83AD-19E954FBF4E5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HachiNIO/HachiNIOHandler.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "channelActive(context:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "22E06117-0D89-46D6-BAEE-88F229EEF226"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HachiNIO/HachiNIOHandler.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "errorCaught(context:error:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
