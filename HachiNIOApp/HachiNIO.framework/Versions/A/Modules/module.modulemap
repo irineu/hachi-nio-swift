@@ -1,0 +1,11 @@
+framework module HachiNIO {
+  umbrella header "HachiNIO.h"
+
+  export *
+  module * { export * }
+}
+
+module HachiNIO.Swift {
+  header "HachiNIO-Swift.h"
+  requires objc
+}

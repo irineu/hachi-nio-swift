@@ -1,0 +1,3 @@
+[submodule "swift-nio-ssl"]
+	path = swift-nio-ssl
+	url = https://github.com/apple/swift-nio-ssl.git
