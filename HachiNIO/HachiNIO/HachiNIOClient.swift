@@ -39,7 +39,8 @@ public class HachiNIOClient{
                 return try  bootstrap.connect(host: ip, port: port).wait()
             }()
             
-            handler.send(channel: channel);
+            let header : Dictionary<String, Any> = ["transaction": "teste", "data" : "xpto", "lalla" : 123];
+            handler.send(channel: channel, header: header);
             
             try channel.closeFuture.wait()
             print("disconnected!");

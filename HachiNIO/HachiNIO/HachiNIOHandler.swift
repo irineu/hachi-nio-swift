@@ -41,9 +41,10 @@ public class HachiNIOHandler: ChannelInboundHandler{
         self.cbOnError()
     }
     
-    public func send(channel: Channel) {
+    public func send(channel: Channel, header: Dictionary<String, Any>) {
         var data = Array("HNIO".utf8)
-        let header = "{\"teste\": 123}"
+        
+        let header =  String(decoding: try! JSONSerialization.data(withJSONObject: header), as: UTF8.self)
         let body = "hello"
         
         data = data + (byteArray(from: Int32(8 + 4 + header.count + body.count)))
