@@ -21,6 +21,10 @@ public class HachiNIOHandler: ChannelInboundHandler{
     private var cbOnData : () -> Void
     private var cbOnError : () -> Void
     
+    private var accumulator = ByteBuffer();
+    private var messageSize = 0
+    private var headerSize = 0
+    
     
     public init(cbOnConnect: @escaping () -> Void, cbOnData: @escaping () -> Void, cbOnError: @escaping () -> Void) {
         self.cbOnConnect = cbOnConnect
@@ -33,7 +37,52 @@ public class HachiNIOHandler: ChannelInboundHandler{
     }
     
     public func channelRead(context: ChannelHandlerContext, data: NIOAny) {
-        print(data)
+        var buff = self.unwrapInboundIn(data)
+        accumulator.writeBuffer(&buff)
+        
+        tryRead();
+    }
+    
+    private func tryRead() -> Void {
+       
+       
+        
+        if(messageSize == 0){
+            
+            let protocolPrefix = accumulator.readBytes(length: 4);
+            
+            if(protocolPrefix != Array("HNIO".utf8)){
+                print("protocol problem");
+                //throw error
+            }
+            
+            messageSize = Int(byteArrayToInt32(from: accumulator.readBytes(length: 4)))
+        }
+        
+        if(headerSize == 0){
+            headerSize = Int(byteArrayToInt32(from: accumulator.readBytes(length: 4)))
+        }
+        
+        if(accumulator.readableBytes < messageSize - 12){
+            print("accumulate \(accumulator.writerIndex) \(messageSize)")
+            return;
+        }
+        
+        let header = String(bytes: accumulator.readBytes(length: Int(headerSize))!, encoding: .utf8);
+        
+        let body = accumulator.readBytes(length: Int(messageSize - headerSize - 8 - 4))!
+        
+        let strBody = String(bytes: body, encoding: .utf8);
+        
+        print(header)
+        
+        messageSize = 0;
+        headerSize = 0;
+        
+        if(accumulator.readableBytes > 0){
+           tryRead()
+        }
+        
         self.cbOnData()
     }
     
@@ -58,5 +107,15 @@ public class HachiNIOHandler: ChannelInboundHandler{
     
     private func byteArray<T>(from value: T) -> [UInt8] where T: FixedWidthInteger {
         withUnsafeBytes(of: value.littleEndian, Array.init)
+    }
+    
+    private func byteArrayToInt32(from byteArr: [UInt8]?) -> UInt32{
+        
+        let messageSize: NSData = NSData(bytes: byteArr, length: 4)
+        var value : UInt32 = 0
+        messageSize.getBytes(&value, length: 4)
+        value = UInt32(littleEndian: value)
+        
+        return value
     }
 }
