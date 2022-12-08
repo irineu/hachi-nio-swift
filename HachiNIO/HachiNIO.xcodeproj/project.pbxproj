@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A4C7D23293D971B00834A36 /* NIOSSL in Frameworks */ = {isa = PBXBuildFile; productRef = 0A4C7D22293D971B00834A36 /* NIOSSL */; };
 		0A89D6F5293A5B350017A000 /* HachiNIO.docc in Sources */ = {isa = PBXBuildFile; fileRef = 0A89D6F4293A5B350017A000 /* HachiNIO.docc */; };
 		0A89D6FB293A5B350017A000 /* HachiNIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A89D6F0293A5B350017A000 /* HachiNIO.framework */; };
 		0A89D700293A5B350017A000 /* HachiNIOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A89D6FF293A5B350017A000 /* HachiNIOTests.swift */; };
@@ -15,7 +16,6 @@
 		0A89D796293A73380017A000 /* HachiNIOClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A89D795293A73380017A000 /* HachiNIOClient.swift */; };
 		0A89D7DF293AAC440017A000 /* NIO in Frameworks */ = {isa = PBXBuildFile; productRef = 0A89D7DE293AAC440017A000 /* NIO */; };
 		0A89D7E1293AAC440017A000 /* NIOTLS in Frameworks */ = {isa = PBXBuildFile; productRef = 0A89D7E0293AAC440017A000 /* NIOTLS */; };
-		0A89D801293AB73F0017A000 /* NIOSSL in Frameworks */ = {isa = PBXBuildFile; productRef = 0A89D800293AB73F0017A000 /* NIOSSL */; };
 		0A89D803293B8F840017A000 /* HachiNIOHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A89D802293B8F840017A000 /* HachiNIOHandler.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,7 +37,6 @@
 		0A89D6FF293A5B350017A000 /* HachiNIOTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HachiNIOTests.swift; sourceTree = "<group>"; };
 		0A89D70A293A5BB80017A000 /* ProtocolServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolServer.swift; sourceTree = "<group>"; };
 		0A89D795293A73380017A000 /* HachiNIOClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HachiNIOClient.swift; sourceTree = "<group>"; };
-		0A89D7FF293AB7250017A000 /* swift-nio-ssl */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "swift-nio-ssl"; path = "../swift-nio-ssl"; sourceTree = "<group>"; };
 		0A89D802293B8F840017A000 /* HachiNIOHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HachiNIOHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -48,7 +47,7 @@
 			files = (
 				0A89D7DF293AAC440017A000 /* NIO in Frameworks */,
 				0A89D7E1293AAC440017A000 /* NIOTLS in Frameworks */,
-				0A89D801293AB73F0017A000 /* NIOSSL in Frameworks */,
+				0A4C7D23293D971B00834A36 /* NIOSSL in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,7 +112,6 @@
 		0A89D7F3293AB4080017A000 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0A89D7FF293AB7250017A000 /* swift-nio-ssl */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -149,7 +147,7 @@
 			packageProductDependencies = (
 				0A89D7DE293AAC440017A000 /* NIO */,
 				0A89D7E0293AAC440017A000 /* NIOTLS */,
-				0A89D800293AB73F0017A000 /* NIOSSL */,
+				0A4C7D22293D971B00834A36 /* NIOSSL */,
 			);
 			productName = HachiNIO;
 			productReference = 0A89D6F0293A5B350017A000 /* HachiNIO.framework */;
@@ -202,6 +200,7 @@
 			mainGroup = 0A89D6E6293A5B350017A000;
 			packageReferences = (
 				0A89D7DD293AAC440017A000 /* XCRemoteSwiftPackageReference "swift-nio" */,
+				0A4C7D1F293D96E900834A36 /* XCRemoteSwiftPackageReference "swift-nio-ssl" */,
 			);
 			productRefGroup = 0A89D6F1293A5B350017A000 /* Products */;
 			projectDirPath = "";
@@ -521,6 +520,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		0A4C7D1F293D96E900834A36 /* XCRemoteSwiftPackageReference "swift-nio-ssl" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-nio-ssl";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		0A89D7DD293AAC440017A000 /* XCRemoteSwiftPackageReference "swift-nio" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-nio.git";
@@ -532,6 +539,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0A4C7D22293D971B00834A36 /* NIOSSL */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0A4C7D1F293D96E900834A36 /* XCRemoteSwiftPackageReference "swift-nio-ssl" */;
+			productName = NIOSSL;
+		};
 		0A89D7DE293AAC440017A000 /* NIO */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0A89D7DD293AAC440017A000 /* XCRemoteSwiftPackageReference "swift-nio" */;
@@ -541,10 +553,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0A89D7DD293AAC440017A000 /* XCRemoteSwiftPackageReference "swift-nio" */;
 			productName = NIOTLS;
-		};
-		0A89D800293AB73F0017A000 /* NIOSSL */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = NIOSSL;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
